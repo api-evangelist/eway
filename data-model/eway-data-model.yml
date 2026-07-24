@@ -1,0 +1,70 @@
+generated: '2026-07-24'
+method: derived
+source: https://github.com/eWAYPayment/eway-rapid-php (SDK models) + https://eway.io/api-v3/
+note: >-
+  Entity-relationship graph derived from the eWAY Rapid request/response models
+  documented in the reference and mirrored in the first-party SDK model classes.
+  eWAY publishes no OpenAPI, so relationships are read from the documented object
+  model rather than $ref links.
+entities:
+  - name: Transaction
+    description: A single card payment, pre-auth, MOTO, or recurring charge attempt.
+    key: TransactionID
+    fields: [TransactionID, TransactionType, TotalAmount, ResponseCode, ResponseMessage, AuthorisationCode, TransactionStatus, TransactionCaptured]
+  - name: Payment
+    description: The amount/invoice detail carried on a transaction.
+    fields: [TotalAmount, InvoiceNumber, InvoiceReference, InvoiceDescription, CurrencyCode]
+  - name: Customer
+    description: Cardholder / token customer. When tokenised, identified by TokenCustomerID.
+    key: TokenCustomerID
+    fields: [TokenCustomerID, Reference, FirstName, LastName, CardDetails, Address, Email, Phone]
+  - name: CardDetails
+    description: Card number/name/expiry (or encrypted/secure-field equivalents).
+    fields: [Name, Number, ExpiryMonth, ExpiryYear, CVN]
+  - name: ShippingAddress
+    description: Optional shipping address on a transaction.
+    fields: [FirstName, LastName, Street1, City, State, PostalCode, Country, ShippingMethod]
+  - name: LineItem
+    description: Optional itemised order lines; totals must reconcile to TotalAmount (V6124).
+    fields: [SKU, Description, Quantity, UnitCost, Tax, Total]
+  - name: AccessCode
+    description: Short-lived token for AccessCode flows (Transparent Redirect / Shared Page / Secure Fields).
+    key: AccessCode
+    fields: [AccessCode, FormActionURL, TransactionStatus]
+  - name: Refund
+    description: A refund against an original captured transaction.
+    fields: [OriginalTransactionID, TotalAmount, InvoiceNumber]
+relationships:
+  - from: Transaction
+    to: Payment
+    type: has_one
+    via: Payment
+  - from: Transaction
+    to: Customer
+    type: has_one
+    via: Customer
+  - from: Transaction
+    to: ShippingAddress
+    type: has_one
+    via: ShippingAddress
+  - from: Transaction
+    to: LineItem
+    type: has_many
+    via: Items
+  - from: Customer
+    to: CardDetails
+    type: has_one
+    via: CardDetails
+  - from: AccessCode
+    to: Transaction
+    type: has_one
+    via: AccessCode
+  - from: Refund
+    to: Transaction
+    type: belongs_to
+    via: OriginalTransactionID
+  - from: Transaction
+    to: Customer
+    type: belongs_to
+    via: TokenCustomerID
+    note: A transaction may reference a stored (tokenised) customer instead of raw card details.

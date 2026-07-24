@@ -1,0 +1,44 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/
+note: >-
+  Client-side / embeddable payment surfaces eWAY provides so merchants can accept
+  card data without it touching their server (PCI scope reduction). These are
+  distinct from the server-side SDKs in packages/.
+components:
+  - family: Secure Fields
+    kind: hosted-input-fields
+    description: >-
+      eWAY-hosted, styleable card input fields embedded into the merchant page.
+      Card data is captured directly by eWAY and returned as a Secure Field one
+      time code, so raw PAN never reaches the merchant server.
+    loader: eWAY.js (Secure Fields)
+    docs: https://eway.io/api-v3/#secure-fields
+    auth: public API key
+  - family: Client Side Encryption
+    kind: js-encryption
+    description: >-
+      JavaScript library that encrypts the card number and CVN in the browser
+      with the merchant's Client Side Encryption key before form submission,
+      keeping plaintext card data off the server.
+    loader: eWAY Client Side Encryption JS
+    docs: https://eway.io/api-v3/#client-side-encryption
+    auth: Client Side Encryption key
+  - family: Responsive Shared Page
+    kind: hosted-payment-page
+    description: >-
+      A fully eWAY-hosted, responsive, brandable payment page (AccessCode Shared
+      flow). The customer is redirected to eWAY to enter card details.
+    docs: https://eway.io/api-v3/#responsive-shared-page
+  - family: Transparent Redirect
+    kind: hosted-post-target
+    description: >-
+      The card form posts directly to eWAY (AccessCode flow) while appearing to
+      stay on the merchant site; the merchant server never handles card data.
+    docs: https://eway.io/api-v3/#transparent-redirect
+  - family: Secure Panel
+    kind: embedded-panel
+    description: >-
+      Global Payments Oceania Single API embeddable Secure Panel for card
+      capture (see the eWAYPayment/securepanel-sample-app reference).
+    repo: https://github.com/eWAYPayment/securepanel-sample-app

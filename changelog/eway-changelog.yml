@@ -1,0 +1,31 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/#api-versioning
+scheme: integer-version-header
+header: X-EWAY-APIVERSION
+current: '47'
+default: '31'
+note: >-
+  The Rapid API does not publish a dated changelog; versioning is by an integer
+  API version selected per request via the X-EWAY-APIVERSION header. Changes are
+  additive between versions. Entries below capture the documented version deltas.
+entries:
+  - version: '47'
+    current: true
+    breaking: false
+    highlights:
+      - Introduction of new fields in requests and responses.
+      - CardType in the response changed from integer to string.
+  - version: '40'
+    breaking: false
+    highlights:
+      - >-
+        New Transaction Query response fields: TransactionDateTime, FraudAction,
+        TransactionCaptured, TransactionType, CurrencyCode, Source, MaxRefund,
+        OriginalTransactionId.
+      - Added AmexECEncryptedData to the Transparent Redirect request (AmexEC support).
+  - version: '31'
+    breaking: false
+    highlights:
+      - The original Rapid API version; used by default when no version header is sent.
+      - Default version for SOAP, which does not support version selection.

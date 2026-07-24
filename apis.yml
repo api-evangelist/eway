@@ -59,6 +59,8 @@ apis:
   - type: SDK
     url: https://github.com/eWAYPayment
 common:
+- type: DomainSecurity
+  url: security/eway-domain-security.yml
 - type: Website
   url: https://www.eway.com.au/
 - type: DeveloperPortal
@@ -87,6 +89,36 @@ common:
   url: https://www.eway.com.au/legals/privacy-policy/
 - type: Security
   url: https://www.eway.com.au/security/
+- type: Compliance
+  url: https://www.eway.com.au/advanced-cybersecurity/pci-dss/
+- type: Packages
+  url: packages/eway-packages.yml
+- type: SDKs
+  url: packages/eway-packages.yml
+- type: Authentication
+  url: authentication/eway-authentication.yml
+- type: Conventions
+  url: conventions/eway-conventions.yml
+- type: Lifecycle
+  url: lifecycle/eway-lifecycle.yml
+- type: ChangeLog
+  url: changelog/eway-changelog.yml
+- type: Sandbox
+  url: sandbox/eway-sandbox.yml
+- type: ErrorCatalog
+  url: errors/eway-error-codes.yml
+- type: DeclineCodes
+  url: errors/eway-decline-codes.yml
+- type: Conformance
+  url: conformance/eway-conformance.yml
+- type: Components
+  url: components/eway-components.yml
+- type: DataModel
+  url: data-model/eway-data-model.yml
+- type: WellKnown
+  url: well-known/eway-well-known.yml
+- type: LLMsTxt
+  url: llms/eway-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

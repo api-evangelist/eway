@@ -1,0 +1,58 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/
+note: >-
+  Cross-cutting request/response semantics for the eWAY Rapid API, captured from
+  the Rapid API reference and the first-party SDKs. eWAY publishes no OpenAPI, so
+  these are documented conventions rather than spec-derived.
+authentication:
+  style: HTTP Basic (API key as username, password as password)
+  public_key: Client-side flows use a public API key (Secure Fields / CSE)
+  ref: authentication/eway-authentication.yml
+versioning:
+  style: request header
+  header: X-EWAY-APIVERSION
+  current: '47'
+  default: '31'
+  ref: lifecycle/eway-lifecycle.yml
+idempotency:
+  supported: false
+  note: >-
+    eWAY does not document an idempotency-key header. Duplicate protection is
+    handled server-side via the InvoiceNumber/InvoiceReference and the
+    validation error V6494/V6494-class duplicate checks; there is no
+    client-supplied idempotency key contract.
+pagination:
+  style: none
+  note: >-
+    The Rapid API is transaction-oriented (single-resource create/query). There
+    is no cursor/offset collection pagination. Transaction and settlement search
+    filter by ID, invoice number, or access code rather than paging.
+formats:
+  request: [json, xml, soap, urlencoded]
+  recommended: json
+  content_types: [application/json]
+partner_header:
+  field: Payment.PartnerID / Request PartnerID
+  note: Partners send a PartnerID to identify the integration source (see V6003).
+error_envelope:
+  style: coded-fields
+  fields:
+    - Errors        # comma-separated validation/system codes (V6xxx, S5xxx, S9xxx, 3Dxx)
+    - ResponseMessage  # comma-separated transaction response codes (A20xx, D44xx, F7/F9xxx)
+    - ResponseCode  # 2-character bank response code
+  refs:
+    - errors/eway-error-codes.yml
+    - errors/eway-decline-codes.yml
+  note: >-
+    eWAY does not use RFC 9457 problem+json. Errors and outcomes are returned as
+    comma-separated code strings that are translated via the reference list or
+    an SDK helper.
+rate_limiting:
+  documented: false
+  note: A rate-limit condition exists (system code S5029 "API Rate Limit Exceeded") but no published limit headers or quotas.
+tracing:
+  request_id: not documented
+metadata:
+  fields: ['Options', CustomerRef, InvoiceNumber, InvoiceReference]
+  note: Merchant metadata is carried on Options key/value entries and the invoice fields.

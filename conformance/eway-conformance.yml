@@ -1,0 +1,39 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.eway.com.au/advanced-cybersecurity/pci-dss/
+note: >-
+  Standards conformance for the eWAY Rapid API, from eWAY's published security
+  pages and the documented API behaviour. eWAY publishes no OpenAPI, so protocol
+  conformance is asserted from the reference docs and SDKs.
+standards:
+  - id: pci-dss
+    conforms: true
+    level: 'Level 1'
+    evidence: >-
+      eWAY is certified PCI DSS Level 1 (the highest merchant/service-provider
+      tier). Transparent Redirect, Secure Fields, Client Side Encryption, and
+      the Responsive Shared Page reduce merchant PCI scope by keeping card data
+      off the merchant server.
+    url: https://www.eway.com.au/advanced-cybersecurity/pci-dss/
+  - id: emv-3ds
+    conforms: true
+    evidence: >-
+      Rapid supports EMV 3-D Secure 2.x (3DS) enrolment/verification flows and
+      the 3Dxx / V622x error code family for XID/ECI/AVV/AuthStatus handling.
+  - id: oauth2
+    conforms: false
+    evidence: Authentication is HTTP Basic (API key + password); no OAuth 2.0 is documented.
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are returned as comma-separated coded fields (Errors/ResponseMessage), not application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Sunset/Deprecation header support; versions selected by X-EWAY-APIVERSION.
+  - id: apple-pay
+    conforms: true
+    evidence: Rapid accepts Apple Pay payment tokens (WalletDetails.Token; V6172-V6187 error family).
+  - id: google-pay
+    conforms: true
+    evidence: eWAY publishes Google Pay Android and web sample integrations.

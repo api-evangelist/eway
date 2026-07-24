@@ -1,0 +1,691 @@
+generated: '2026-07-24'
+method: searched
+source: https://github.com/eWAYPayment/eway-rapid-php/blob/master/resource/lang/en.ini
+docs: https://eway.io/api-v3/#response-amp-error-codes
+format: eway-error-codes
+note: eWAY Rapid returns validation and system errors as comma-separated codes in the 'Errors' field of
+  the response. V6xxx = request validation, S5xxx = gateway/system, S9xxx = SDK/library, 3Dxx = 3-D Secure.
+  Translate via the SDK helper (e.g. RapidClient message lookup) or the reference list.
+envelope_field: Errors
+classes:
+  V6xxx: request validation
+  S5xxx: gateway/system
+  S9xxx: SDK/library
+  3Dxx: 3-D Secure
+errors:
+- code: S5000
+  message: System Error
+  class: system
+- code: S5011
+  message: PayPal Connection Error
+  class: system
+- code: S5012
+  message: PayPal Settings Error
+  class: system
+- code: S5014
+  message: Merchant setting Error
+  class: system
+- code: S5016
+  message: Apple Pay processing error
+  class: system
+- code: S5020
+  message: Transaction maximum time elapsed
+  class: system
+- code: S5029
+  message: API Rate Limit Exceeded
+  class: system
+- code: S5085
+  message: Started 3dSecure
+  class: system
+- code: S5086
+  message: Routed 3dSecure
+  class: system
+- code: S5087
+  message: Completed 3dSecure
+  class: system
+- code: S5088
+  message: PayPal Transaction Created
+  class: system
+- code: S5099
+  message: Incomplete (Access Code in progress/incomplete)
+  class: system
+- code: S5666
+  message: Transaction in unknown state
+  class: system
+- code: S5010
+  message: Unknown error returned by gateway
+  class: system
+- code: V6000
+  message: Validation error
+  class: validation
+- code: V6001
+  message: Invalid CustomerIP
+  class: validation
+- code: V6002
+  message: Invalid DeviceID
+  class: validation
+- code: V6003
+  message: Invalid Request PartnerID
+  class: validation
+- code: V6004
+  message: Invalid Request Method
+  class: validation
+- code: V6010
+  message: Invalid TransactionType, account not certified for eCome only MOTO or Recurring available
+  class: validation
+- code: V6011
+  message: Invalid Payment TotalAmount
+  class: validation
+- code: V6012
+  message: Invalid Payment InvoiceDescription
+  class: validation
+- code: V6013
+  message: Invalid Payment InvoiceNumber
+  class: validation
+- code: V6014
+  message: Invalid Payment InvoiceReference
+  class: validation
+- code: V6015
+  message: Invalid Payment CurrencyCode
+  class: validation
+- code: V6016
+  message: Payment Required
+  class: validation
+- code: V6017
+  message: Payment CurrencyCode Required
+  class: validation
+- code: V6018
+  message: Unknown Payment CurrencyCode
+  class: validation
+- code: V6019
+  message: Cardholder identity authentication required
+  class: validation
+- code: V6020
+  message: Cardholder Input Required
+  class: validation
+- code: V6021
+  message: EWAY_CARDHOLDERNAME Required
+  class: validation
+- code: V6022
+  message: EWAY_CARDNUMBER Required
+  class: validation
+- code: V6023
+  message: EWAY_CARDCVN Required
+  class: validation
+- code: V6024
+  message: Cardholder Identity Authentication One Time Password Not Active Yet
+  class: validation
+- code: V6025
+  message: PIN Required
+  class: validation
+- code: V6033
+  message: Invalid Expiry Date
+  class: validation
+- code: V6034
+  message: Invalid Issue Number
+  class: validation
+- code: V6035
+  message: Invalid Valid From Date
+  class: validation
+- code: V6039
+  message: Invalid Network Token Status
+  class: validation
+- code: V6040
+  message: Invalid TokenCustomerID
+  class: validation
+- code: V6041
+  message: Customer Required
+  class: validation
+- code: V6042
+  message: Customer FirstName Required
+  class: validation
+- code: V6043
+  message: Customer LastName Required
+  class: validation
+- code: V6044
+  message: Customer CountryCode Required
+  class: validation
+- code: V6045
+  message: Customer Title Required
+  class: validation
+- code: V6046
+  message: TokenCustomerID Required
+  class: validation
+- code: V6047
+  message: RedirectURL Required
+  class: validation
+- code: V6048
+  message: CheckoutURL Required when CheckoutPayment specified
+  class: validation
+- code: V6049
+  message: Invalid Checkout URL
+  class: validation
+- code: V6051
+  message: Invalid Customer FirstName
+  class: validation
+- code: V6052
+  message: Invalid Customer LastName
+  class: validation
+- code: V6053
+  message: Invalid Customer CountryCode
+  class: validation
+- code: V6058
+  message: Invalid Customer Title
+  class: validation
+- code: V6059
+  message: Invalid RedirectURL
+  class: validation
+- code: V6060
+  message: Invalid TokenCustomerID
+  class: validation
+- code: V6061
+  message: Invalid Customer Reference
+  class: validation
+- code: V6062
+  message: Invalid Customer CompanyName
+  class: validation
+- code: V6063
+  message: Invalid Customer JobDescription
+  class: validation
+- code: V6064
+  message: Invalid Customer Street1
+  class: validation
+- code: V6065
+  message: Invalid Customer Street2
+  class: validation
+- code: V6066
+  message: Invalid Customer City
+  class: validation
+- code: V6067
+  message: Invalid Customer State
+  class: validation
+- code: V6068
+  message: Invalid Customer PostalCode
+  class: validation
+- code: V6069
+  message: Invalid Customer Email
+  class: validation
+- code: V6070
+  message: Invalid Customer Phone
+  class: validation
+- code: V6071
+  message: Invalid Customer Mobile
+  class: validation
+- code: V6072
+  message: Invalid Customer Comments
+  class: validation
+- code: V6073
+  message: Invalid Customer Fax
+  class: validation
+- code: V6074
+  message: Invalid Customer URL
+  class: validation
+- code: V6075
+  message: Invalid ShippingAddress FirstName
+  class: validation
+- code: V6076
+  message: Invalid ShippingAddress LastName
+  class: validation
+- code: V6077
+  message: Invalid ShippingAddress Street1
+  class: validation
+- code: V6078
+  message: Invalid ShippingAddress Street2
+  class: validation
+- code: V6079
+  message: Invalid ShippingAddress City
+  class: validation
+- code: V6080
+  message: Invalid ShippingAddress State
+  class: validation
+- code: V6081
+  message: Invalid ShippingAddress PostalCode
+  class: validation
+- code: V6082
+  message: Invalid ShippingAddress Email
+  class: validation
+- code: V6083
+  message: Invalid ShippingAddress Phone
+  class: validation
+- code: V6084
+  message: Invalid ShippingAddress Country
+  class: validation
+- code: V6085
+  message: Invalid ShippingAddress ShippingMethod
+  class: validation
+- code: V6086
+  message: Invalid ShippingAddress Fax
+  class: validation
+- code: V6091
+  message: Unknown Customer CountryCode
+  class: validation
+- code: V6092
+  message: Unknown ShippingAddress CountryCode
+  class: validation
+- code: V6093
+  message: Insufficient Address Information
+  class: validation
+- code: V6100
+  message: Invalid EWAY_CARDNAME
+  class: validation
+- code: V6101
+  message: Invalid EWAY_CARDEXPIRYMONTH
+  class: validation
+- code: V6102
+  message: Invalid EWAY_CARDEXPIRYYEAR
+  class: validation
+- code: V6103
+  message: Invalid EWAY_CARDSTARTMONTH
+  class: validation
+- code: V6104
+  message: Invalid EWAY_CARDSTARTYEAR
+  class: validation
+- code: V6105
+  message: Invalid EWAY_CARDISSUENUMBER
+  class: validation
+- code: V6106
+  message: Invalid EWAY_CARDCVN
+  class: validation
+- code: V6107
+  message: Invalid EWAY_ACCESSCODE
+  class: validation
+- code: V6108
+  message: Invalid CustomerHostAddress
+  class: validation
+- code: V6109
+  message: Invalid UserAgent
+  class: validation
+- code: V6110
+  message: Invalid EWAY_CARDNUMBER
+  class: validation
+- code: V6111
+  message: Unauthorised API Access, Account Not PCI Certified
+  class: validation
+- code: V6112
+  message: Redundant card details other than expiry year and month
+  class: validation
+- code: V6113
+  message: Invalid transaction for refund
+  class: validation
+- code: V6114
+  message: Gateway validation error
+  class: validation
+- code: V6115
+  message: Invalid DirectRefundRequest, Transaction ID
+  class: validation
+- code: V6116
+  message: Invalid card data on original TransactionID
+  class: validation
+- code: V6117
+  message: Invalid CreateAccessCodeSharedRequest, FooterText
+  class: validation
+- code: V6118
+  message: Invalid CreateAccessCodeSharedRequest, HeaderText
+  class: validation
+- code: V6119
+  message: Invalid CreateAccessCodeSharedRequest, Language
+  class: validation
+- code: V6120
+  message: Invalid CreateAccessCodeSharedRequest, LogoUrl
+  class: validation
+- code: V6121
+  message: Invalid TransactionSearch, Filter Match Type
+  class: validation
+- code: V6122
+  message: Invalid TransactionSearch, Non numeric Transaction ID
+  class: validation
+- code: V6123
+  message: Invalid TransactionSearch,no TransactionID or AccessCode specified
+  class: validation
+- code: V6124
+  message: Invalid Line Items. The line items have been provided however the totals do not match the TotalAmount
+    field
+  class: validation
+- code: V6125
+  message: Selected Payment Type not enabled
+  class: validation
+- code: V6126
+  message: Invalid encrypted card number, decryption failed
+  class: validation
+- code: V6127
+  message: Invalid encrypted cvn, decryption failed
+  class: validation
+- code: V6128
+  message: Invalid Method for Payment Type
+  class: validation
+- code: V6129
+  message: Transaction has not been authorised for Capture/Cancellation
+  class: validation
+- code: V6130
+  message: Generic customer information error
+  class: validation
+- code: V6131
+  message: Generic shipping information error
+  class: validation
+- code: V6132
+  message: Transaction has already been completed or voided, operation not permitted
+  class: validation
+- code: V6133
+  message: Checkout not available for Payment Type
+  class: validation
+- code: V6134
+  message: Invalid Auth Transaction ID for Capture/Void
+  class: validation
+- code: V6135
+  message: PayPal Error Processing Refund
+  class: validation
+- code: V6136
+  message: Original transaction does not exist or state is incorrect
+  class: validation
+- code: V6140
+  message: Merchant account is suspended
+  class: validation
+- code: V6141
+  message: Invalid PayPal account details or API signature
+  class: validation
+- code: V6142
+  message: Authorise not available for Bank/Branch
+  class: validation
+- code: V6143
+  message: Invalid Public Key
+  class: validation
+- code: V6144
+  message: Method not available with Public API Key Authentication
+  class: validation
+- code: V6145
+  message: Credit Card not allow if Token Customer ID is provided with Public API Key Authentication
+  class: validation
+- code: V6146
+  message: Client Side Encryption Key Missing or Invalid
+  class: validation
+- code: V6147
+  message: Unable to Create One Time Code for Secure Field
+  class: validation
+- code: V6148
+  message: Secure Field has Expired
+  class: validation
+- code: V6149
+  message: Invalid Secure Field One Time Code
+  class: validation
+- code: V6150
+  message: Invalid Refund Amount
+  class: validation
+- code: V6151
+  message: Refund amount greater than original transaction
+  class: validation
+- code: V6152
+  message: Original transaction already refunded for total amount
+  class: validation
+- code: V6153
+  message: Card type not support by merchant
+  class: validation
+- code: V6154
+  message: Insufficent Funds Available For Refund
+  class: validation
+- code: V6155
+  message: Missing one or more fields in request
+  class: validation
+- code: V6160
+  message: Encryption Method Not Supported
+  class: validation
+- code: V6161
+  message: Encryption failed, missing or invalid key
+  class: validation
+- code: V6165
+  message: Invalid Click-to-Pay (Visa Checkout) data or decryption failed
+  class: validation
+- code: V6170
+  message: Invalid TransactionSearch, Invoice Number is not unique
+  class: validation
+- code: V6171
+  message: Invalid TransactionSearch, Invoice Number not found
+  class: validation
+- code: V6210
+  message: Secure Field Invalid Type
+  class: validation
+- code: V6211
+  message: Secure Field Invalid Div
+  class: validation
+- code: V6212
+  message: Invalid Style string for Secure Field
+  class: validation
+- code: V6220
+  message: Three domain secure XID invalid
+  class: validation
+- code: V6221
+  message: Three domain secure ECI invalid
+  class: validation
+- code: V6222
+  message: Three domain secure AVV invalid
+  class: validation
+- code: V6223
+  message: Three domain secure XID is required
+  class: validation
+- code: V6224
+  message: Three Domain Secure ECI is required
+  class: validation
+- code: V6225
+  message: Three Domain Secure AVV is required
+  class: validation
+- code: V6226
+  message: Three Domain Secure AuthStatus is required
+  class: validation
+- code: V6227
+  message: Three Domain Secure AuthStatus invalid
+  class: validation
+- code: V6228
+  message: Three domain secure Version is required
+  class: validation
+- code: V6230
+  message: Three domain secure Directory Server Txn ID invalid
+  class: validation
+- code: V6231
+  message: Three domain secure Directory Server Txn ID is required
+  class: validation
+- code: V6232
+  message: Three domain secure Version is invalid
+  class: validation
+- code: V6501
+  message: Invalid Amex InstallementPlan
+  class: validation
+- code: V6502
+  message: Invalid Number Of Installements for Amex. Valid values are from 0 to 99 inclusive
+  class: validation
+- code: V6503
+  message: Merchant Amex ID required
+  class: validation
+- code: V6504
+  message: Invalid Merchant Amex ID
+  class: validation
+- code: V6505
+  message: Merchant Terminal ID required
+  class: validation
+- code: V6506
+  message: Merchant category code required
+  class: validation
+- code: V6507
+  message: Invalid merchant category code
+  class: validation
+- code: V6508
+  message: Amex 3D ECI required
+  class: validation
+- code: V6509
+  message: Invalid Amex 3D ECI
+  class: validation
+- code: V6510
+  message: Invalid Amex 3D verification value
+  class: validation
+- code: V6511
+  message: Invalid merchant location data
+  class: validation
+- code: V6512
+  message: Invalid merchant street address
+  class: validation
+- code: V6513
+  message: Invalid merchant city
+  class: validation
+- code: V6514
+  message: Invalid merchant country
+  class: validation
+- code: V6515
+  message: Invalid merchant phone
+  class: validation
+- code: V6516
+  message: Invalid merchant postcode
+  class: validation
+- code: V6517
+  message: Amex connection error
+  class: validation
+- code: V6518
+  message: Amex EC Card Details API returned invalid data
+  class: validation
+- code: V6520
+  message: Invalid or missing Amex Point Of Sale Data
+  class: validation
+- code: V6521
+  message: Invalid or missing Amex transaction date time
+  class: validation
+- code: V6522
+  message: Invalid or missing Amex Original transaction date time
+  class: validation
+- code: V6530
+  message: Credit Card Number in non Credit Card Field
+  class: validation
+- code: S9900
+  message: eWAY library has encountered unknown exception
+  class: system
+- code: S9901
+  message: eWAY library has encountered invalid JSON response from server
+  class: system
+- code: S9902
+  message: eWAY library has encountered empty response from server
+  class: system
+- code: S9903
+  message: eWAY library has encountered unexpected method call
+  class: system
+- code: S9904
+  message: eWAY library has encountered invalid data provided to models
+  class: system
+- code: S9990
+  message: eWAY library does not have an endpoint initialised, or not initialise to a URL
+  class: system
+- code: S9991
+  message: eWAY library does not have API Key or password, or are invalid
+  class: system
+- code: S9992
+  message: eWAY library has encountered a problem connecting to Rapid
+  class: system
+- code: S9993
+  message: eWAY library has encountered an invalid API key or password
+  class: system
+- code: S9995
+  message: eWAY library has encountered invalid argument in method call
+  class: system
+- code: S9996
+  message: eWAY library has encountered an Rapid server error
+  class: system
+- code: 3D05
+  message: Payment CurrencyCode Required
+  class: 3dsecure
+- code: 3D06
+  message: Card Number Required
+  class: 3dsecure
+- code: 3D07
+  message: Invalid Payment TotalAmount
+  class: 3dsecure
+- code: 3D08
+  message: Customer FirstName Required
+  class: 3dsecure
+- code: 3D09
+  message: Customer LastName Required
+  class: 3dsecure
+- code: 3D10
+  message: Customer CountryCode Required
+  class: 3dsecure
+- code: 3D11
+  message: Customer Street1 Required
+  class: 3dsecure
+- code: 3D12
+  message: Customer City Required
+  class: 3dsecure
+- code: 3D13
+  message: Customer State Required
+  class: 3dsecure
+- code: 3D14
+  message: Customer PostalCode Required
+  class: 3dsecure
+- code: 3D15
+  message: Customer Email Required
+  class: 3dsecure
+- code: 3D16
+  message: Customer Phone Required
+  class: 3dsecure
+- code: 3D17
+  message: Card Expiry Month Required
+  class: 3dsecure
+- code: 3D18
+  message: Card Expiry Year Required
+  class: 3dsecure
+- code: 3D19
+  message: Access Code Required
+  class: 3dsecure
+- code: 3D20
+  message: Invalid Card Number
+  class: 3dsecure
+- code: 3D21
+  message: Card Type Required
+  class: 3dsecure
+- code: 3D22
+  message: Init Transaction Does not Exist or State is Incorrect
+  class: 3dsecure
+- code: 3D23
+  message: Enrol Transaction Does not Exist or State is Incorrect
+  class: 3dsecure
+- code: 3D25
+  message: Meta.eWAYCustomerId Required
+  class: 3dsecure
+- code: 3D26
+  message: Meta.AccessCode Required
+  class: 3dsecure
+- code: 3D98
+  message: Function Not Supported
+  class: 3dsecure
+- code: 3D99
+  message: System Error
+  class: 3dsecure
+- code: V6172
+  message: Invalid Apple Pay request, Data has no value
+  class: validation
+- code: V6173
+  message: Invalid Apple Pay request, Signature has no value
+  class: validation
+- code: V6174
+  message: Invalid Apple Pay request, Version number is not supported
+  class: validation
+- code: V6175
+  message: Invalid Apple Pay request, Header is null
+  class: validation
+- code: V6176
+  message: Invalid Apple Pay request, EphemeralPublicKey has no value
+  class: validation
+- code: V6177
+  message: Invalid Apple Pay request, PublicKeyHash has no value
+  class: validation
+- code: V6178
+  message: Invalid Apple Pay request, TransactionId has no value
+  class: validation
+- code: V6179
+  message: Invalid Apple Pay request, Apple Pay isnt available in your country
+  class: validation
+- code: V6186
+  message: Apple Pay Not Supported By Gateway
+  class: validation
+- code: V6187
+  message: TokenCustomer and Apple Pay should not coexist at the same time
+  class: validation
+- code: V7025
+  message: Invalid ApplePay request, unsupported card type
+  class: validation
+- code: V7023
+  message: WalletDetails.Token missing
+  class: validation

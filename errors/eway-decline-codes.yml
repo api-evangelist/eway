@@ -1,0 +1,460 @@
+generated: '2026-07-24'
+method: searched
+source: https://github.com/eWAYPayment/eway-rapid-php/blob/master/resource/lang/en.ini
+docs: https://eway.io/api-v3/#response-amp-error-codes
+note: eWAY returns transaction response/decline codes in the ResponseMessage field (comma-separated) and
+  a 2-character bank ResponseCode. A-codes are approvals, D-codes are bank/issuer declines, F-codes are
+  fraud (Beagle) declines. Bank decline reasons are typically surfaced generically to the cardholder;
+  the coded reason is for the merchant.
+envelope_field: ResponseMessage
+also_field: ResponseCode
+masked_to_buyer: true
+decline_codes:
+- code: A2000
+  meaning: Transaction Approved
+  category: approved
+  outcome: approved
+- code: A2008
+  meaning: Honour With Identification
+  category: approved
+  outcome: approved
+- code: A2010
+  meaning: Approved For Partial Amount
+  category: approved
+  outcome: approved
+- code: A2011
+  meaning: Approved, VIP
+  category: approved
+  outcome: approved
+- code: A2016
+  meaning: Approved, Update Track 3
+  category: approved
+  outcome: approved
+- code: D4401
+  meaning: Refer to Issuer
+  category: decline
+  outcome: declined
+- code: D4402
+  meaning: Refer to Issuer, special
+  category: decline
+  outcome: declined
+- code: D4403
+  meaning: No Merchant
+  category: decline
+  outcome: declined
+- code: D4404
+  meaning: Pick Up Card
+  category: decline
+  outcome: declined
+- code: D4405
+  meaning: Do Not Honour
+  category: decline
+  outcome: declined
+- code: D4406
+  meaning: Error
+  category: decline
+  outcome: declined
+- code: D4407
+  meaning: Pick Up Card, Special
+  category: decline
+  outcome: declined
+- code: D4409
+  meaning: Request In Progress
+  category: decline
+  outcome: declined
+- code: D4412
+  meaning: Invalid Transaction
+  category: decline
+  outcome: declined
+- code: D4413
+  meaning: Invalid Amount
+  category: decline
+  outcome: declined
+- code: D4414
+  meaning: Invalid Card Number
+  category: decline
+  outcome: declined
+- code: D4415
+  meaning: No Issuer
+  category: decline
+  outcome: declined
+- code: D4419
+  meaning: Re-enter Last Transaction
+  category: decline
+  outcome: declined
+- code: D4421
+  meaning: No Action Taken
+  category: decline
+  outcome: declined
+- code: D4422
+  meaning: Suspected Malfunction
+  category: decline
+  outcome: declined
+- code: D4423
+  meaning: Unacceptable Transaction Fee
+  category: decline
+  outcome: declined
+- code: D4425
+  meaning: Unable to Locate Record On File
+  category: decline
+  outcome: declined
+- code: D4430
+  meaning: Format Error
+  category: decline
+  outcome: declined
+- code: D4431
+  meaning: Bank Not Supported By Switch
+  category: decline
+  outcome: declined
+- code: D4433
+  meaning: Expired Card, Capture
+  category: decline
+  outcome: declined
+- code: D4434
+  meaning: Suspected Fraud, Retain Card
+  category: decline
+  outcome: declined
+- code: D4435
+  meaning: Card Acceptor, Contact Acquirer, Retain Card
+  category: decline
+  outcome: declined
+- code: D4436
+  meaning: Restricted Card, Retain Card
+  category: decline
+  outcome: declined
+- code: D4437
+  meaning: Contact Acquirer Security Department, Retain Card
+  category: decline
+  outcome: declined
+- code: D4438
+  meaning: PIN Tries Exceeded, Capture
+  category: decline
+  outcome: declined
+- code: D4439
+  meaning: No Credit Account
+  category: decline
+  outcome: declined
+- code: D4440
+  meaning: Function Not Supported
+  category: decline
+  outcome: declined
+- code: D4441
+  meaning: Lost Card
+  category: decline
+  outcome: declined
+- code: D4442
+  meaning: No Universal Account
+  category: decline
+  outcome: declined
+- code: D4443
+  meaning: Stolen Card
+  category: decline
+  outcome: declined
+- code: D4444
+  meaning: No Investment Account
+  category: decline
+  outcome: declined
+- code: D4450
+  meaning: Visa Checkout Transaction Error
+  category: decline
+  outcome: declined
+- code: D4451
+  meaning: Insufficient Funds
+  category: decline
+  outcome: declined
+- code: D4452
+  meaning: No Cheque Account
+  category: decline
+  outcome: declined
+- code: D4453
+  meaning: No Savings Account
+  category: decline
+  outcome: declined
+- code: D4454
+  meaning: Expired Card
+  category: decline
+  outcome: declined
+- code: D4455
+  meaning: Incorrect PIN
+  category: decline
+  outcome: declined
+- code: D4456
+  meaning: No Card Record
+  category: decline
+  outcome: declined
+- code: D4457
+  meaning: Function Not Permitted to Cardholder
+  category: decline
+  outcome: declined
+- code: D4458
+  meaning: Function Not Permitted to Terminal
+  category: decline
+  outcome: declined
+- code: D4459
+  meaning: Suspected Fraud
+  category: decline
+  outcome: declined
+- code: D4460
+  meaning: Acceptor Contact Acquirer
+  category: decline
+  outcome: declined
+- code: D4461
+  meaning: Exceeds Withdrawal Limit
+  category: decline
+  outcome: declined
+- code: D4462
+  meaning: Restricted Card
+  category: decline
+  outcome: declined
+- code: D4463
+  meaning: Security Violation
+  category: decline
+  outcome: declined
+- code: D4464
+  meaning: Original Amount Incorrect
+  category: decline
+  outcome: declined
+- code: D4465
+  meaning: Withdrawal Frequency Limit Exceeded
+  category: decline
+  outcome: declined
+- code: D4466
+  meaning: Acceptor Contact Acquirer, Security
+  category: decline
+  outcome: declined
+- code: D4467
+  meaning: Capture Card
+  category: decline
+  outcome: declined
+- code: D4475
+  meaning: PIN Tries Exceeded
+  category: decline
+  outcome: declined
+- code: D4476
+  meaning: Invalidate Txn Reference
+  category: decline
+  outcome: declined
+- code: D4481
+  meaning: Accumulated Transaction Counter (Amount) Exceeded
+  category: decline
+  outcome: declined
+- code: D4482
+  meaning: CVV Validation Error
+  category: decline
+  outcome: declined
+- code: D4483
+  meaning: Acquirer Is Not Accepting Transactions From You At This Time
+  category: decline
+  outcome: declined
+- code: D4484
+  meaning: Acquirer Is Not Accepting This Transaction
+  category: decline
+  outcome: declined
+- code: D4490
+  meaning: Cut off In Progress
+  category: decline
+  outcome: declined
+- code: D4491
+  meaning: Card Issuer Unavailable
+  category: decline
+  outcome: declined
+- code: D4492
+  meaning: Unable To Route Transaction
+  category: decline
+  outcome: declined
+- code: D4493
+  meaning: Cannot Complete, Violation Of The Law
+  category: decline
+  outcome: declined
+- code: D4494
+  meaning: Duplicate Transaction
+  category: decline
+  outcome: declined
+- code: D4495
+  meaning: Amex Declined
+  category: decline
+  outcome: declined
+- code: D4496
+  meaning: System Error
+  category: decline
+  outcome: declined
+- code: D4497
+  meaning: MasterPass Error
+  category: decline
+  outcome: declined
+- code: D4498
+  meaning: PayPal Create Transaction Error
+  category: decline
+  outcome: declined
+- code: D4499
+  meaning: Invalid Transaction for Auth/Void
+  category: decline
+  outcome: declined
+- code: F7000
+  meaning: Undefined Fraud Error
+  category: fraud
+  outcome: declined_fraud
+- code: F7001
+  meaning: Challenged Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7002
+  meaning: Country Match Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7003
+  meaning: High Risk Country Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7004
+  meaning: Anonymous Proxy Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7005
+  meaning: Transparent Proxy Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7006
+  meaning: Free Email Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7007
+  meaning: International Transaction Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7008
+  meaning: Risk Score Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7009
+  meaning: Denied Fraud
+  category: fraud
+  outcome: declined_fraud
+- code: F7010
+  meaning: Denied by PayPal Fraud Rules
+  category: fraud
+  outcome: declined_fraud
+- code: F9001
+  meaning: Custom Fraud Rule
+  category: fraud
+  outcome: declined_fraud
+- code: F9010
+  meaning: High Risk Billing Country
+  category: fraud
+  outcome: declined_fraud
+- code: F9011
+  meaning: High Risk Credit Card Country
+  category: fraud
+  outcome: declined_fraud
+- code: F9012
+  meaning: High Risk Customer IP Address
+  category: fraud
+  outcome: declined_fraud
+- code: F9013
+  meaning: High Risk Email Address
+  category: fraud
+  outcome: declined_fraud
+- code: F9014
+  meaning: High Risk Shipping Country
+  category: fraud
+  outcome: declined_fraud
+- code: F9015
+  meaning: Multiple card numbers for single email address
+  category: fraud
+  outcome: declined_fraud
+- code: F9016
+  meaning: Multiple card numbers for single location
+  category: fraud
+  outcome: declined_fraud
+- code: F9017
+  meaning: Multiple email addresses for single card number
+  category: fraud
+  outcome: declined_fraud
+- code: F9018
+  meaning: Multiple email addresses for single location
+  category: fraud
+  outcome: declined_fraud
+- code: F9019
+  meaning: Multiple locations for single card number
+  category: fraud
+  outcome: declined_fraud
+- code: F9020
+  meaning: Multiple locations for single email address
+  category: fraud
+  outcome: declined_fraud
+- code: F9021
+  meaning: Suspicious Customer First Name
+  category: fraud
+  outcome: declined_fraud
+- code: F9022
+  meaning: Suspicious Customer Last Name
+  category: fraud
+  outcome: declined_fraud
+- code: F9023
+  meaning: Transaction Declined
+  category: fraud
+  outcome: declined_fraud
+- code: F9024
+  meaning: Multiple transactions for same address with known credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9025
+  meaning: Multiple transactions for same address with new credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9026
+  meaning: Multiple transactions for same email with new credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9027
+  meaning: Multiple transactions for same email with known credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9028
+  meaning: Multiple transactions for new credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9029
+  meaning: Multiple transactions for known credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9030
+  meaning: Multiple transactions for same email address
+  category: fraud
+  outcome: declined_fraud
+- code: F9031
+  meaning: Multiple transactions for same credit card
+  category: fraud
+  outcome: declined_fraud
+- code: F9032
+  meaning: Invalid Customer Last Name
+  category: fraud
+  outcome: declined_fraud
+- code: F9033
+  meaning: Invalid Billing Street
+  category: fraud
+  outcome: declined_fraud
+- code: F9034
+  meaning: Invalid Shipping Street
+  category: fraud
+  outcome: declined_fraud
+- code: F9037
+  meaning: Suspicious Customer Email Address
+  category: fraud
+  outcome: declined_fraud
+- code: F9049
+  meaning: Genuine Customer
+  category: fraud
+  outcome: declined_fraud
+- code: F9050
+  meaning: High Risk Email Address and amount
+  category: fraud
+  outcome: declined_fraud
+- code: F9059
+  meaning: No liability shift
+  category: fraud
+  outcome: declined_fraud
+- code: F9113
+  meaning: Card issuing country differs from IP address country
+  category: fraud
+  outcome: declined_fraud

@@ -1,0 +1,70 @@
+generated: '2026-07-24'
+method: searched
+source: https://github.com/eWAYPayment
+note: >-
+  First-party, MIT-licensed eWAY Rapid client libraries published by the
+  eWAYPayment GitHub organisation and mirrored to the language registries.
+  Verified against npm, RubyGems, Packagist, and NuGet.
+packages:
+  - language: php
+    registry: packagist
+    name: eway/eway-rapid-php
+    url: https://packagist.org/packages/eway/eway-rapid-php
+    repo: https://github.com/eWAYPayment/eway-rapid-php
+    install: composer require eway/eway-rapid-php
+    license: MIT
+    official: true
+  - language: java
+    registry: maven
+    name: com.eway:eway-rapid-java
+    url: https://github.com/eWAYPayment/eway-rapid-java
+    repo: https://github.com/eWAYPayment/eway-rapid-java
+    license: MIT
+    official: true
+  - language: dotnet
+    registry: nuget
+    name: eWAY.Rapid
+    url: https://www.nuget.org/packages/eWAY.Rapid/
+    repo: https://github.com/eWAYPayment/eway-rapid-net
+    install: dotnet add package eWAY.Rapid
+    license: MIT
+    official: true
+  - language: dotnet
+    registry: nuget
+    name: eway-rapid-netstandard
+    url: https://www.nuget.org/packages/eway-rapid-netstandard/
+    repo: https://github.com/eWAYPayment/eway-rapid-netstandard
+    license: MIT
+    official: true
+  - language: javascript
+    registry: npm
+    name: eway-rapid
+    url: https://www.npmjs.com/package/eway-rapid
+    repo: https://github.com/eWAYPayment/eway-rapid-node
+    install: npm install eway-rapid
+    license: MIT
+    official: true
+  - language: ruby
+    registry: rubygems
+    name: eway_rapid
+    url: https://rubygems.org/gems/eway_rapid
+    repo: https://github.com/eWAYPayment/eway-rapid-ruby
+    install: gem install eway_rapid
+    license: MIT
+    official: true
+  - language: java
+    registry: github
+    name: eway-rapid-android
+    url: https://github.com/eWAYPayment/eway-rapid-android
+    repo: https://github.com/eWAYPayment/eway-rapid-android
+    license: MIT
+    official: true
+    platform: android
+  - language: objective-c
+    registry: github
+    name: eway-rapid-ios
+    url: https://github.com/eWAYPayment/eway-rapid-ios
+    repo: https://github.com/eWAYPayment/eway-rapid-ios
+    license: MIT
+    official: true
+    platform: ios

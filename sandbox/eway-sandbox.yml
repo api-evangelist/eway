@@ -1,0 +1,47 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/
+docs: https://go.eway.io/s/article/Test-Credit-Card-Numbers
+note: >-
+  eWAY provides a free, permanently available sandbox. Test and live are fully
+  separated by host and by credential pair; a MYeWAY sandbox account issues its
+  own API key/password. Values below are published verbatim by eWAY; never use
+  them against the live gateway.
+environments:
+  sandbox:
+    base_url: https://api.sandbox.ewaypayments.com/
+    console: https://www.eway.com.au/developers/partners/sandbox
+    credentials: Separate sandbox API key + password from a MYeWAY sandbox account.
+  live:
+    base_url: https://api.ewaypayments.com/
+test_cards:
+  - brand: visa
+    number: '4444333322221111'
+    note: Primary test Visa; the card number that works on the test gateway.
+  - brand: mastercard
+    number: '5105105105105100'
+    note: Test MasterCard.
+  - brand: amex
+    number: '378282246310005'
+amount_rules:
+  approved_endings:
+    - '00'
+    - '08'
+  note: >-
+    In the sandbox, the transaction TotalAmount controls the result. Amounts
+    whose cents end in 00 or 08 return an approved response; other cents values
+    return a declined/failed response. This lets integrators exercise both
+    approve and decline paths without live funds.
+sandbox_modes:
+  - name: Always Approve
+    note: >-
+      Transactions always approve, except invalid card numbers, expired cards,
+      and negative amounts, which still decline.
+  - name: Always Decline
+    note: Transactions are always declined.
+  - name: Use Cents Value
+    note: >-
+      The transaction result is driven by the cents value of the amount, mapping
+      to specific response/decline codes (see errors/eway-decline-codes.yml).
+expiry:
+  note: Use any future expiry date; past dates trigger V6033 Invalid Expiry Date.

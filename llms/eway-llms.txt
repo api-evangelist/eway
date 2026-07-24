@@ -1,0 +1,43 @@
+# eWAY (Eway)
+
+> eWAY is an Australian online payment gateway (founded Sydney, 1998; now part of Global Payments Oceania) providing card-not-present payment acceptance for e-commerce merchants across Australia, New Zealand, and Asia. Its flagship developer surface is the Rapid API — a versioned HTTP payments API (current version 47) for purchases, pre-authorisations, MOTO, recurring and tokenised (stored-card) payments — offered through seven integration methods from server-to-server Direct Connection to PCI-scope-reducing Transparent Redirect, Secure Fields, and the Responsive Shared Page. Auth is HTTP Basic (API key + password) with an X-EWAY-APIVERSION header. eWAY is PCI DSS Level 1 and ships MIT-licensed SDKs for PHP, Java, .NET, Node.js, Ruby, Android, and iOS plus a free sandbox. No public OpenAPI, OAuth, or webhooks/AsyncAPI are published.
+
+## APIs
+- [eWAY Rapid API reference](https://eway.io/api-v3/): Versioned HTTP payments API (v47) — transactions, AccessCode flows, refunds, token customers, cancel-authorisation.
+- Base URL (live): https://api.ewaypayments.com/
+- Base URL (sandbox): https://api.sandbox.ewaypayments.com/
+
+## Authentication
+- [Authentication profile](authentication/eway-authentication.yml): HTTP Basic (API key as username, password as password); public API key for client-side Secure Fields / CSE. No OAuth.
+
+## Conventions & lifecycle
+- [API conventions](conventions/eway-conventions.yml): versioning header, coded error envelope, no idempotency key, no pagination.
+- [Lifecycle](lifecycle/eway-lifecycle.yml): X-EWAY-APIVERSION versioning (current 47, default 31); status page.
+- [Changelog](changelog/eway-changelog.yml): documented version deltas (31 → 40 → 47).
+
+## Errors
+- [Error codes](errors/eway-error-codes.yml): V6xxx validation, S5xxx/S9xxx system, 3Dxx 3-D Secure (225 codes).
+- [Decline codes](errors/eway-decline-codes.yml): A20xx approvals, D44xx bank declines, F7/F9xxx fraud (112 codes).
+
+## Testing
+- [Sandbox](sandbox/eway-sandbox.yml): free sandbox host, test cards, amount-driven approve/decline modes.
+
+## SDKs & components
+- [Packages / SDKs](packages/eway-packages.yml): PHP, Java, .NET, Node.js, Ruby, Android, iOS (all MIT, first-party).
+- [Embedded components](components/eway-components.yml): Secure Fields, Client Side Encryption, Responsive Shared Page, Transparent Redirect, Secure Panel.
+- [GitHub organisation](https://github.com/eWAYPayment)
+
+## Security & compliance
+- [Conformance](conformance/eway-conformance.yml): PCI DSS Level 1, EMV 3-D Secure, Apple Pay, Google Pay.
+- [Domain security](security/eway-domain-security.yml): TLS/HSTS/SPF/DMARC probe results.
+- [PCI DSS page](https://www.eway.com.au/advanced-cybersecurity/pci-dss/)
+
+## Data model
+- [Data model / ERD](data-model/eway-data-model.yml): Transaction, Payment, Customer/Token, AccessCode, Refund, LineItem, ShippingAddress.
+
+## Docs
+- [Developer portal](https://eway.io/api-v3/)
+- [Documentation](https://www.eway.com.au/documentation/)
+- [Pricing](https://www.eway.com.au/plans-pricing/)
+- [Support](https://www.eway.com.au/support/)
+- [Status](https://status.eway.com.au/)

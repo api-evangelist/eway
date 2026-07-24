@@ -1,0 +1,44 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/
+docs: https://eway.io/api-v3/#authentication
+note: >-
+  No OpenAPI is published by eWAY, so this profile is captured from the Rapid
+  API reference documentation rather than derived from a securitySchemes block.
+summary:
+  types: [http, apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  primary: HTTP Basic authentication
+schemes:
+  - name: RapidBasicAuth
+    type: http
+    scheme: basic
+    description: >-
+      All server-to-server calls to the Rapid API authenticate with HTTP Basic
+      auth. The eWAY API Key is sent as the username and the matching API
+      Password as the password. Credentials are issued per environment (live vs
+      sandbox) from MYeWAY.
+    sources: [docs]
+  - name: RapidPublicApiKey
+    type: apiKey
+    in: header
+    description: >-
+      Client-side integrations (Secure Fields, Client Side Encryption, the
+      responsive Secure Panel) authenticate with a public API key rather than
+      the Basic-auth secret, so the card secret never touches the merchant
+      server. Method availability is restricted for public-key auth (see error
+      V6144).
+    sources: [docs]
+required_headers:
+  - name: X-EWAY-APIVERSION
+    description: Selects the Rapid API version (current 47; default 31 when omitted).
+    required: false
+  - name: Authorization
+    description: HTTP Basic, base64(APIKey:Password).
+    required: true
+oauth: false
+scopes: none
+notes:
+  - eWAY does not document OAuth 2.0, OpenID Connect, or scoped tokens; there is no scope surface.
+  - Sandbox and live use separate API key/password pairs and separate base hosts.

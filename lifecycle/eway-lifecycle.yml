@@ -1,0 +1,28 @@
+generated: '2026-07-24'
+method: searched
+source: https://eway.io/api-v3/
+versioning:
+  scheme: request-header
+  header: X-EWAY-APIVERSION
+  current: '47'
+  default: '31'
+  docs: https://eway.io/api-v3/#api-versioning
+  note: >-
+    The Rapid API is versioned by an integer sent in the X-EWAY-APIVERSION
+    header. Omitting the header pins the request to the original version 31.
+    New fields are additive across versions (e.g. v40 added Transaction Query
+    fields; v47 introduced new request/response fields and changed CardType in
+    the response from integer to string).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    eWAY publishes no formal deprecation/sunset policy and does not emit RFC 8594
+    Sunset/Deprecation headers. Old API versions remain callable via the version
+    header; there is no announced end-of-life schedule.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.eway.com.au/
+support: https://www.eway.com.au/support/
+deprecated_operations: []
