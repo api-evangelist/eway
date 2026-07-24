@@ -1,0 +1,92 @@
+aid: eway
+url: https://raw.githubusercontent.com/api-evangelist/eway/refs/heads/main/apis.yml
+name: eWAY
+kind: company
+description: >-
+  eWAY (Eway) is an Australian online payment gateway founded in Sydney in 1998
+  and now part of Global Payments Oceania, providing card-not-present payment
+  acceptance for e-commerce merchants across Australia, New Zealand, and Asia.
+  Its flagship developer surface is the Rapid API, a versioned HTTP payments
+  API (currently version 47) that processes purchases, pre-authorisations, MOTO
+  and recurring transactions, and tokenised (stored-card) payments, offered
+  through seven integration methods ranging from server-to-server Direct
+  Connection to PCI-scope-reducing Transparent Redirect, Secure Fields, and the
+  Responsive Shared Page. Merchants authenticate with an API key and password
+  over HTTP Basic auth, and eWAY publishes open-source MIT-licensed SDKs for
+  PHP, Java, .NET, Node.js, Ruby, Android, and iOS plus a free sandbox. The
+  Rapid API is genuinely API-first and well documented, but eWAY does not
+  publish a downloadable OpenAPI/Swagger definition, and no public OAuth,
+  webhooks catalog, or AsyncAPI event stream is documented.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Payments
+- Australia
+- Payment Gateway
+- Payment Processing
+- Card Payments
+- Tokenization
+- E-commerce
+- Recurring Payments
+- Subscriptions
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.19'
+apis:
+- aid: eway:eway-rapid-api
+  name: eWAY Rapid API
+  description: >-
+    The eWAY Rapid API is a versioned HTTP payments API (v47) for processing
+    card transactions. It exposes transaction creation (Direct Connection),
+    AccessCode-based flows (Transparent Redirect / Responsive Shared Page /
+    Secure Fields), transaction query by ID, and token-customer, refund, and
+    cancel-authorisation operations. Supports REST/JSON (recommended), plus
+    SOAP, XML, and RPC formats. Authentication is HTTP Basic (API key as
+    username, password as password) with an X-EWAY-APIVERSION header.
+  humanURL: https://eway.io/api-v3/
+  baseURL: https://api.ewaypayments.com/
+  tags:
+  - Payments
+  - Card Payments
+  - Tokenization
+  - Recurring Payments
+  properties:
+  - type: Documentation
+    url: https://eway.io/api-v3/
+  - type: APIReference
+    url: https://eway.io/api-v3/
+  - type: Documentation
+    url: https://www.eway.com.au/documentation/
+  - type: SDK
+    url: https://github.com/eWAYPayment
+common:
+- type: Website
+  url: https://www.eway.com.au/
+- type: DeveloperPortal
+  url: https://eway.io/api-v3/
+- type: Documentation
+  url: https://www.eway.com.au/documentation/
+- type: APIReference
+  url: https://eway.io/api-v3/
+- type: GitHubOrganization
+  url: https://github.com/eWAYPayment
+- type: StatusPage
+  url: https://status.eway.com.au/
+- type: Pricing
+  url: https://www.eway.com.au/plans-pricing/
+- type: Blog
+  url: https://www.eway.com.au/blog/
+- type: Support
+  url: https://www.eway.com.au/support/
+- type: SignUp
+  url: https://www.eway.com.au/sign-up/
+- type: Login
+  url: https://au.myeway.com/
+- type: TermsOfService
+  url: https://www.eway.com.au/legal/
+- type: PrivacyPolicy
+  url: https://www.eway.com.au/legals/privacy-policy/
+- type: Security
+  url: https://www.eway.com.au/security/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

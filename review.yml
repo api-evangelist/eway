@@ -1,0 +1,130 @@
+aid: eway
+name: eWAY
+review:
+  question: What is eWAY's public API posture, and does it publish a downloadable OpenAPI/Swagger definition?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+findings:
+  summary: >-
+    eWAY (Eway) is an Australian online payment gateway founded in Sydney in
+    1998 and now operated under Global Payments Oceania, serving card-not-
+    present e-commerce merchants across Australia, New Zealand, and Asia. It is
+    a genuinely API-first payments company: the Rapid API is publicly and well
+    documented, versioned (currently v47 via the X-EWAY-APIVERSION header),
+    with a free sandbox and open-source MIT-licensed SDKs for PHP, Java, .NET,
+    .NET Standard, Node.js, Ruby, Android, and iOS published under the
+    eWAYPayment GitHub organization. The developer reference lives at
+    https://eway.io/api-v3/ (HTTP 200) with supporting documentation at
+    https://www.eway.com.au/documentation/ (HTTP 200). Despite this, eWAY does
+    NOT publish a downloadable OpenAPI/Swagger definition anywhere probed:
+    /openapi.json, /openapi.yaml, /swagger.json, /spec, and /api-docs on both
+    the docs host (eway.io) and the API host (api.ewaypayments.com) all return
+    404 or 401. Zero specs were harvested because none is published. The API
+    host (https://api.ewaypayments.com/, and sandbox
+    https://api.sandbox.ewaypayments.com/) returns HTTP 401 anonymously,
+    confirming a live authenticated surface but no anonymous machine-readable
+    contract. Authentication is HTTP Basic (API key as username, password as
+    password) — there is no OAuth2 or OIDC; both
+    /.well-known/openid-configuration and /.well-known/oauth-authorization-server
+    return 404. No public webhooks catalog or AsyncAPI event stream is
+    documented. No public Postman collection was found. As a card gateway
+    (not an account-to-account / NPP rail), there is no ISO 20022 or scheme
+    FAPI documentation posture. Home market: Australia.
+  home_market: Australia
+  tier: gateway-psp
+  developer_portal:
+    url: https://eway.io/api-v3/
+    http_status: 200
+    confirmed: true
+    note: Eway Rapid API Reference (Slate-style HTML docs), designed around Rapid API version 47.
+  downloadable_specs:
+    openapi_published: false
+    specs_harvested: 0
+    note: >-
+      No OpenAPI/Swagger definition is published. Probed /openapi.json,
+      /openapi.yaml, /swagger.json on eway.io (all 404) and /openapi.json,
+      /swagger.json, /spec, /api-docs on api.ewaypayments.com (all 401, auth
+      wall — HTML/JSON docs shell not served anonymously). SDK repositories in
+      the eWAYPayment GitHub org ship native client libraries, not a spec file.
+  auth_model:
+    scheme: HTTP Basic
+    detail: API key supplied as username and password as password; X-EWAY-APIVERSION header selects the API version (currently 47).
+    oauth2: false
+    oidc: false
+    wellknown_openid_configuration_status: 404
+    wellknown_oauth_authorization_server_status: 404
+  webhooks:
+    documented: false
+    asyncapi: false
+    note: No server-to-server webhook/event catalog or AsyncAPI document is publicly documented in the Rapid API reference.
+  postman:
+    found: false
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.ewaypayments.com/
+    documented: true
+    note: REST/JSON is the recommended format; production host returns HTTP 401 anonymously.
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.sandbox.ewaypayments.com/
+    documented: true
+    note: Free sandbox environment; returns HTTP 401 anonymously.
+  - protocol: SOAP
+    scheme: https
+    documented: true
+    note: Rapid API also offers SOAP, HTTP POST (JSON/XML), and RPC (XML/JSON) formats in addition to REST/JSON.
+  endpoints_confirmed_documented:
+  - POST https://api.ewaypayments.com/Transaction
+  - GET  https://api.ewaypayments.com/Transaction/{id}
+  - POST https://api.ewaypayments.com/AccessCodes
+  integration_methods:
+  - Direct Connection
+  - Transparent Redirect
+  - Responsive Shared Page
+  - Iframe
+  - Secure Fields
+  - Secure Panel
+  - Pay Now Button
+  sdks:
+    github_org: https://github.com/eWAYPayment
+    languages:
+    - PHP
+    - Java
+    - .NET
+    - .NET Standard
+    - Node.js
+    - Ruby
+    - Android
+    - iOS
+    license: MIT
+sources:
+- url: https://eway.io/api-v3/
+  type: APIReference
+  http_status: 200
+  note: Eway Rapid API Reference v47; base URLs, HTTP Basic auth, Direct Connection / AccessCode flows, transaction query.
+- url: https://www.eway.com.au/documentation/
+  type: Documentation
+  http_status: 200
+  note: Merchant/developer documentation hub linking to API specs and integration guides.
+- url: https://www.eway.com.au/developers/
+  type: Documentation
+  http_status: 200
+- url: https://api.ewaypayments.com/
+  type: API
+  http_status: 401
+  note: Live production Rapid API host; authenticated (HTTP Basic), no anonymous spec.
+- url: https://api.sandbox.ewaypayments.com/
+  type: API
+  http_status: 401
+  note: Free sandbox host; authenticated.
+- url: https://github.com/eWAYPayment
+  type: GitHubOrganization
+  http_status: 200
+  note: Open-source MIT-licensed Rapid SDKs (PHP, Java, .NET, Node.js, Ruby, Android, iOS) plus Apple Pay / Google Pay samples. No spec file.
+- url: https://api.ewaypayments.com/.well-known/openid-configuration
+  type: WellKnown
+  http_status: 404
+  note: No OIDC discovery document; confirms no OAuth2/OIDC.
+fetched: '2026-07-24'
