@@ -16,3 +16,96 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: eway-npm-registry
+  label: npm registry
+  partner: npm
+  partner_name: npm registry
+  category: official SDK (JavaScript/TypeScript)
+  type: register
+  channel: package-registry
+  evidence: https://www.npmjs.com/package/eway-rapid
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: eway-rapid
+      version: 1.2.1
+      released: '2022-06-17'
+      released_field: modified
+      lapsed: true
+      page: https://www.npmjs.com/package/eway-rapid
+      repo_leg: github-org:ewaypayment
+      publisher_leg: email:eway.com.au
+      matched_by: domain
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: eway-nuget-gallery
+  label: NuGet Gallery
+  partner: nuget
+  partner_name: NuGet Gallery
+  category: official SDK (.NET)
+  type: register
+  channel: package-registry
+  evidence: https://www.nuget.org/packages/eWAY.Rapid
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: NuGet Gallery (public registry JSON)
+    spec_file: null
+    language: .NET
+    packages:
+    - name: eWAY.Rapid
+      version: 1.6.3
+      released: '2021-05-13'
+      released_field: published
+      lapsed: true
+      page: https://www.nuget.org/packages/eWAY.Rapid
+      repo_leg: github-org:ewaypayment
+      publisher_leg: org:eway
+      matched_by: github-org
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: eway-rubygems
+  label: RubyGems
+  partner: rubygems
+  partner_name: RubyGems
+  category: official SDK (Ruby)
+  type: register
+  channel: package-registry
+  evidence: https://rubygems.org/gems/eway_rapid
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: RubyGems (public registry JSON)
+    spec_file: null
+    language: Ruby
+    packages:
+    - name: eway_rapid
+      version: 2.0.0
+      released: '2018-12-14'
+      released_field: version_created_at
+      lapsed: true
+      page: https://rubygems.org/gems/eway_rapid
+      repo_leg: domain:eway.com.au
+      publisher_leg: org:eway
+      matched_by: domain
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
