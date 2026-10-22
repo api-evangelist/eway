@@ -18,26 +18,10 @@ checked:
 - https://rubygems.org/api/v1
 - https://zapier.com/apps/eway/integrations
 - woocommerce/integrations/woocommerce-integration-edges.yml
+- adobe-commerce/integrations/adobe-commerce-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
-- partner_name: WooCommerce (own)
-  partner: woocommerce
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://woocommerce.com/products/eway/
-  mirror_of: woocommerce/integrations/woocommerce-integration-edges.yml
-  apps:
-  - Eway
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  category: extension
 - partner_name: npm registry
   partner: npm
   partner_match: register
@@ -128,4 +112,38 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: WooCommerce (own)
+  partner: woocommerce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://woocommerce.com/products/eway/
+  mirror_of: woocommerce/integrations/woocommerce-integration-edges.yml
+  apps:
+  - Eway
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: extension
+- partner_name: Adobe Commerce (own)
+  partner: adobe-commerce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://commercemarketplace.adobe.com/eway-eway-rapid-magento2.html
+  mirror_of: adobe-commerce/integrations/adobe-commerce-integration-edges.yml
+  apps:
+  - Eway Payments
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Commerce Marketplace extension
 templates: []
